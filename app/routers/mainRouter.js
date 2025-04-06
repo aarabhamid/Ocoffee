@@ -14,6 +14,11 @@ mainRouter.get('/catalogue', mainController.getCatalogue);
 //Page produit
 mainRouter.get('/products/:coffeeId', mainController.getProductPage,);
 
+// Route pour la page boutique
+mainRouter.get('/boutique', (req, res) => {
+    res.render('boutique'); // Rend la vue boutique.ejs
+});
+
 
 mainRouter.use((err, req, res, next) => {
     console.error(err);

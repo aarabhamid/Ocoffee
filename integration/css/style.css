@@ -33,7 +33,8 @@ body {
 }
 
 /* Page principal */
-main {
+main, 
+.boutique_about {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -207,7 +208,8 @@ ul.footer_list {
         text-decoration: none;
     }
 
-    main {
+    main,
+    .boutique_about {
         flex-direction: row;
     }
 
@@ -342,4 +344,18 @@ gap: 2rem;
     display: flex;
 }
 
+h2 {
+    text-align: center;
+    padding: 2rem;
+    background-color: rgba(58, 9, 6, 0.582);
+    border-radius: 8px;
+}
+
+.boutique_ambiance,
+.boutique_savoir-faire {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+}
 
