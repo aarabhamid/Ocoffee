@@ -1,0 +1,36 @@
+<%- include('partials/head') %>
+
+    <main>
+        <div class="text_main">
+            <h1><strong>Nos cafés</strong></h1>
+            <p>Bienvenue dans notre boutique, où règne une ambiance chaleureuse et accueillante qui éveille tous vos
+                sens. Dès que vous franchissez la porte, vous êtes enveloppé d'une douce symphonie d'arômes envoûtants
+                de café fraîchement moulu.</p>
+            <a class="view_catalogue" href="/catalogue">Voir le catalogue</a>
+        </div>
+
+        <img class="image_main" src="/00.assets/about.jpg" alt="Image de plusieurs tasses de café">
+    </main>
+
+    <section class="newest">
+
+        <div class="newest_titre">
+            <h2 class="newest_title">Nouveautés</h2>
+        </div>
+
+        <div class="newest_published">
+            <% for (const coffees of coffee){ %>
+                <div class="coffee_card">
+                    <img src="/00.assets/coffees/<%= coffees.ref %>.png" alt="" class="image_coffee_card">
+                    <h3 class="name_coffee_card">
+                        <%= coffees.name %>
+                    </h3>
+                    <p class="description_coffee_card">
+                        <%= coffees.origin %>
+                    </p>
+                    <a class="discover_button" href="products/<%= coffees.id %>">Découvrir</a>
+                </div>
+                <% } %>
+    </section>
+
+    <%- include('partials/footer') %>

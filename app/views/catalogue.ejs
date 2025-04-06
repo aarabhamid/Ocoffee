@@ -1,0 +1,73 @@
+<%- include('partials/head') %>
+
+    <main class="main_catalogue">
+        <div class="text_on_image">
+            <h1 style="background-image: url('/00.assets/about.jpg');">Notre catalogue</h1>
+        </div>
+    </main>
+
+    <form id="filterForm" action="/catalogue" method="GET">
+        <select id="filterSelect" class="select_form" name="filter">
+            <option value="">Sélectionnez un filtre</option>
+            <optgroup label="Origine">
+                <% allOrigins.forEach(function(origin) { %>
+                    <option value="<%= origin %>" <%= selectedOrigin === origin ? 'selected' : '' %>>
+                        <%= origin %>
+                    </option>
+                <% }); %>
+            </optgroup>
+        </select>
+    </form>
+    
+
+    <section class="products">
+        <% if (coffees.length> 0) { %>
+            <% coffees.forEach(coffeeItem=> { %>
+                <div class="coffee_card ">
+                    <img src="/00.assets/coffees/<%= coffeeItem.ref %>.png" alt="Image de <%= coffeeItem.name %>"
+                        class="image_coffee_card">
+                    <h3 class="name_coffee_card">
+                        <%= coffeeItem.name %>
+                    </h3>
+                    <p class="description_coffee_card">
+                        <%= coffeeItem.origin %>
+                    </p>
+                    <a class="discover_button" href="products/<%= coffeeItem.id %>">Découvrir</a>
+                </div>
+                <% }); %>
+                    <% } else { %>
+                        <p>Aucun produit disponible.</p>
+                        <% } %>
+    </section>
+
+    <div class="button_see_all_products">
+        <button id="seeAllProducts" class="button">Voir tous les produits</button>
+    </div>
+
+    <!-- Script JS car je n'arrive pas a le faire fonctionner dans un fichier à part. -->
+    <script>
+
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('filterForm');
+    const filterSelect = document.getElementById('filterSelect');
+
+    filterSelect.addEventListener('change', function () {
+        form.submit();
+    });
+});
+
+        // Ecoute le clique voir tout les produits
+        document.addEventListener('DOMContentLoaded', function () {
+            const seeAllButton = document.getElementById('seeAllProducts');
+            const coffeeCards = document.querySelectorAll('.coffee_card');
+
+            seeAllButton.addEventListener('click', function () {
+                coffeeCards.forEach(card => {
+                    card.classList.add('visible');
+                });
+                seeAllButton.style.display = 'none';
+            });
+        });
+    </script>
+
+    <%- include('partials/footer') %>
