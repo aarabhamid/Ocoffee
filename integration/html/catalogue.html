@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oCoffee</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <script src="../js/header.js"></script>
+
+</head>
+
+<body>
+      <!-- En-tête -->
+      <header>
+        <!-- Logo et Titre du site(avec lien vers page accueil) -->
+        <a href="/">
+            <img src="../00.assets/logo.svg" alt="logo oCoffee">
+            oCoffee
+        </a>
+
+        <nav id="menu-navbar">
+            <!-- Bouton burger -->
+            <button id="menu-button" aria-label="Show navigation links">
+                <?xml version="1.0" encoding="UTF-8"?><svg width="100%" height="100%" stroke-width="1.5"
+                    viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="none">
+                    <path d="M3 5H21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                    <path d="M3 12H21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                    <path d="M3 19H21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                </svg>
+            </button>
+            <!-- Lien de la barre de navigation -->
+            <ul>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">Catalogue</a></li>
+                <li><a href="#">Boutique</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Image de présentation du catalogue -->
+        <section>
+            <div class="text_on_image">
+                <h1><strong>Notre catalogue</strong></h1>
+                <img class="image_main_catalogue" src="../../demande-client/00.assets/about.jpg"
+                    alt="Image de présentation de plusieurs tasses de café">
+            </div>
+        </section>
+
+
+        <section class="all_products">
+            <!-- Liste de tout les produits -->
+            <ul>
+                <!-- Carte produit -->
+                <li>
+                    <article class="coffee_card">
+                        <img src="./docs/demande-client/00.assets/coffees/100955890.png" alt="image de café Espresso"
+                            class="image_coffee_card">
+                        <h3 class="name_coffee_card">Espresso</h3>
+                        <p class="description_coffee_card">Café fort et concentré préparé en faisant passer de
+                            l'eau chaude à travers du café finement moulu.</p>
+                    </article>
+                </li>
+            </ul>
+        </section>
+        <a class="button" href="">Voir tout les produits</a>
+    </main>
+
+    <!-- Pied-de-page -->
+    <footer>
+        <p>O'Coffee - Tous droits réservés</p>
+    </footer>
+
+</body>
+
+
+</html>
